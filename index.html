@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postres Mariu - Delicias Caseras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-cake-candles"></i>
+                <span>Postres Mariu</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#mision">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Postres Caseros Deliciosos</h1>
+            <p>Elaborados con amor por Lcda Mariuxi Hidalgo</p>
+            <p class="experience">Con más de 5 años de experiencia en Milagro</p>
+            <a href="#productos" class="btn btn-primary">Ver Productos</a>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-cake">🍰</div>
+            <div class="floating-cake" style="animation-delay: 0.5s">🧁</div>
+            <div class="floating-cake" style="animation-delay: 1s">🍰</div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión -->
+    <section id="mision" class="mision-vision">
+        <div class="container">
+            <h2>Sobre Nosotros</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misión</h3>
+                    <p>Ofrecer postres caseros de alta calidad, elaborados con ingredientes frescos y amor en cada porción, garantizando satisfacción y dulzura en cada cliente del cantón Milagro.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Visión</h3>
+                    <p>Ser la empresa de postres caseros más confiable y reconocida en el cantón Milagro, expandiendo nuestros servicios con entregas rápidas y productos de excelencia que deleiten a familias ecuatorianas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Valores</h3>
+                    <p>Calidad, confianza, dedicación y amor por lo que hacemos. Cada postre es elaborado con los mejores ingredientes y el cuidado que mereces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" class="productos">
+        <div class="container">
+            <h2>Nuestros Postres</h2>
+            <div class="productos-grid">
+                <!-- Flan -->
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <div class="imagen-placeholder flan">🍮</div>
+                        <div class="precio-badge">$1.50</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Flan Casero</h3>
+                        <p class="ingredientes">
+                            <strong>Ingredientes:</strong><br>
+                            Huevos frescos, leche condensada, azúcar refinada, vainilla natural y caramelo artesanal
+                        </p>
+                        <p class="descripcion">Suave, cremoso y delicioso. El clásico flan casero que te enamorará con su textura perfecta.</p>
+                        <button class="btn btn-whatsapp" onclick="pedirWhatsApp('Flan Casero - $1.50')">
+                            <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cheesecake -->
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <div class="imagen-placeholder cheesecake">🍰</div>
+                        <div class="precio-badge">$2.75</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Cheesecake Neoyorquino</h3>
+                        <p class="ingredientes">
+                            <strong>Ingredientes:</strong><br>
+                            Queso crema premium, galletas graham, mantequilla, azúcar, huevos, vainilla y frutas frescas
+                        </p>
+                        <p class="descripcion">Cremoso, elegante y sofisticado. El favorito de quienes aman los sabores refinados.</p>
+                        <button class="btn btn-whatsapp" onclick="pedirWhatsApp('Cheesecake Neoyorquino - $2.75')">
+                            <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tres Leches -->
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <div class="imagen-placeholder tres-leches">🎂</div>
+                        <div class="precio-badge">$2.50</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Pastel de Tres Leches</h3>
+                        <p class="ingredientes">
+                            <strong>Ingredientes:</strong><br>
+                            Masa esponjosa, leche evaporada, leche condensada, crema de leche fresca, canela y fresas
+                        </p>
+                        <p class="descripcion">Jugoso, esponjoso y lleno de sabor. El postre ecuatoriano por excelencia.</p>
+                        <button class="btn btn-whatsapp" onclick="pedirWhatsApp('Pastel de Tres Leches - $2.50')">
+                            <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicio de Entrega -->
+    <section class="entrega">
+        <div class="container">
+            <h2>Servicio de Entrega</h2>
+            <div class="entrega-info">
+                <div class="entrega-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Entrega a Domicilio</h3>
+                    <p>Sin costo adicional en el cantón Milagro</p>
+                </div>
+                <div class="entrega-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Entrega Rápida</h3>
+                    <p>Prepáramos tus postres frescos a tiempo</p>
+                </div>
+                <div class="entrega-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Ingredientes Frescos</h3>
+                    <p>Seleccionados cuidadosamente para tu satisfacción</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <h3>Propietaria</h3>
+                    <p><strong>Lcda Mariuxi Hidalgo</strong></p>
+                    <p>Ubicación: Cantón Milagro, Ecuador</p>
+                    <p>Experiencia: Más de 5 años</p>
+                </div>
+                <div class="contacto-whatsapp">
+                    <h3>Realiza tu Pedido</h3>
+                    <a href="https://wa.me/593930989550064?text=Hola%20Mariuxi,%20quiero%20pedir%20postres%20deliciosos" target="_blank" class="btn btn-whatsapp-grande">
+                        <i class="fab fa-whatsapp"></i>
+                        Enviar Mensaje por WhatsApp
+                    </a>
+                    <p class="whatsapp-number">+593 930989550064</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Postres Mariu. Elaborados con amor por Lcda Mariuxi Hidalgo. Todos los derechos reservados.</p>
+            <p>Entrega sin costo en el cantón Milagro</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
