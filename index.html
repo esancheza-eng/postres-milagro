@@ -1,10 +1,11 @@
+```html id="b9z2ya"
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dulces Mari - Postres en Milagro</title>
+<title>Sweet Elhy | Postres en Milagro</title>
 
 <style>
 
@@ -14,37 +15,42 @@ margin:0;
 background:#fff5f5;
 }
 
+/* HEADER */
+
 header{
 background:#ff4d6d;
 color:white;
-padding:20px;
 text-align:center;
+padding:20px;
 }
 
-nav{
-display:flex;
-justify-content:center;
-gap:20px;
-background:white;
-padding:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-
-nav a{
-text-decoration:none;
-color:#333;
-font-weight:bold;
-}
+/* HERO VIDEO */
 
 .hero{
-text-align:center;
-padding:60px;
-background:#ffe3e3;
+position:relative;
+height:420px;
+overflow:hidden;
 }
 
-.hero h1{
-font-size:40px;
+.hero iframe{
+width:100%;
+height:100%;
+border:none;
 }
+
+.hero-text{
+position:absolute;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+background:rgba(0,0,0,0.5);
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+/* PRODUCTOS */
 
 .productos{
 display:flex;
@@ -56,15 +62,17 @@ padding:40px;
 
 .card{
 background:white;
+width:260px;
 border-radius:12px;
 box-shadow:0 6px 15px rgba(0,0,0,0.1);
-width:260px;
 padding:20px;
 text-align:center;
 }
 
 .card img{
 width:100%;
+height:200px;
+object-fit:cover;
 border-radius:10px;
 }
 
@@ -72,24 +80,72 @@ border-radius:10px;
 color:#ff4d6d;
 font-size:22px;
 font-weight:bold;
-margin:10px 0;
+margin:10px;
 }
 
-.btn{
-background:#25D366;
+button{
+background:#ff4d6d;
 color:white;
-padding:10px 18px;
-border-radius:8px;
-text-decoration:none;
-display:inline-block;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e63c5d;
+}
+
+/* CARRITO */
+
+.carrito{
+position:fixed;
+top:20px;
+right:20px;
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+width:230px;
+}
+
+.whatsapp{
+background:#25D366;
+width:100%;
 margin-top:10px;
 }
 
-footer{
+/* MAPA */
+
+.mapa{
 text-align:center;
+padding:40px;
+}
+
+/* RESEÑAS */
+
+.reseñas{
+background:white;
+padding:40px;
+text-align:center;
+}
+
+.reseña{
+max-width:400px;
+margin:auto;
+margin-bottom:20px;
+background:#fff0f3;
 padding:20px;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
 background:#ff4d6d;
 color:white;
+text-align:center;
+padding:20px;
 }
 
 </style>
@@ -105,38 +161,37 @@ color:white;
 
 </header>
 
-<nav>
-
-<a href="#">Inicio</a>
-<a href="#">Productos</a>
-<a href="#">Nosotros</a>
-<a href="#">Contacto</a>
-
-</nav>
+<!-- VIDEO HERO -->
 
 <section class="hero">
 
-<h1>Postres Caseros Deliciosos</h1>
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
 
-<p>Elaborados por la Lcda. Mariuxi Hidalgo</p>
+<div class="hero-text">
 
-<p>Más de 5 años de experiencia en Milagro</p>
+<h2>Postres que enamoran</h2>
+
+<p>Dos personas degustando nuestros deliciosos postres</p>
+
+</div>
 
 </section>
+
+<!-- PRODUCTOS -->
 
 <section class="productos">
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e">
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
 
 <h3>Flan Casero</h3>
 
-<p>Huevos frescos, leche, vainilla y caramelo natural</p>
+<p>Huevos frescos, leche y caramelo natural</p>
 
 <div class="precio">$1.50</div>
 
-<a class="btn" href="https://wa.me/5930989938910?text=Hola%20quiero%20pedir%20un%20Flan">Pedir por WhatsApp</a>
+<button onclick="agregar('Flan Casero',1.50)">Agregar</button>
 
 </div>
 
@@ -146,59 +201,9 @@ color:white;
 
 <h3>Cheesecake</h3>
 
-<p>Queso crema, base de galleta y topping de fresa</p>
+<p>Queso crema con topping de fresa</p>
 
 <div class="precio">$2.75</div>
 
-<a class="btn" href="https://wa.me/5930989938910?text=Hola%20quiero%20pedir%20un%20Cheesecake">Pedir por WhatsApp</a>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1625944525533-473f1c3d54e7?auto=format&fit=crop&w=800&q=80" alt="Postre de Tres Leches">
-
-<h3>Tres Leches</h3>
-
-<p>Leche evaporada, leche condensada y crema de leche</p>
-
-<div class="precio">$2.50</div>
-
-<a class="btn" href="https://wa.me/5930989550064?text=Hola%20quiero%20pedir%20un%20Tres%20Leches">
-Pedir por WhatsApp
-</a>
-
-</div>
-
-</section>
-
-<section style="padding:40px;text-align:center">
-
-<h2>Misión</h2>
-
-<p>Ofrecer postres caseros de alta calidad elaborados con ingredientes frescos y amor para cada cliente del cantón Milagro.</p>
-
-<h2>Visión</h2>
-
-<p>Ser la marca de postres caseros más reconocida en Milagro por su sabor, calidad y servicio a domicilio.</p>
-
-</section>
-
-<footer>
-
-<p>📍 Milagro - Ecuador</p>
-
-<p>📱 Pedidos al 0989938910</p>
-
-<p>🚚 Entrega a domicilio GRATIS</p>
-
-</footer>
-
-</body>
-</html>
-
-
-
-
-
-
+<button onclick
+```
