@@ -1,4 +1,4 @@
-```html id="b9z2ya"
+```html id="sweetelhy_full_code"
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,14 +21,14 @@ header{
 background:#ff4d6d;
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
 }
 
 /* HERO VIDEO */
 
 .hero{
 position:relative;
-height:420px;
+height:400px;
 overflow:hidden;
 }
 
@@ -92,10 +92,6 @@ border-radius:6px;
 cursor:pointer;
 }
 
-button:hover{
-background:#e63c5d;
-}
-
 /* CARRITO */
 
 .carrito{
@@ -109,10 +105,18 @@ box-shadow:0 5px 15px rgba(0,0,0,0.2);
 width:230px;
 }
 
-.whatsapp{
+/* WHATSAPP FLOAT */
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
 background:#25D366;
-width:100%;
-margin-top:10px;
+color:white;
+font-size:28px;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
 }
 
 /* MAPA */
@@ -139,7 +143,17 @@ padding:20px;
 border-radius:10px;
 }
 
-/* FOOTER */
+/* ADMIN */
+
+.admin{
+padding:40px;
+background:white;
+}
+
+table{
+width:100%;
+text-align:center;
+}
 
 footer{
 background:#ff4d6d;
@@ -155,55 +169,55 @@ padding:20px;
 <body>
 
 <header>
-
 <h1>🍰 Sweet Elhy</h1>
 <p>Postres caseros en Milagro</p>
-
 </header>
-
-<!-- VIDEO HERO -->
 
 <section class="hero">
 
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/4aZr5hZXP_s"></iframe>
 
 <div class="hero-text">
-
-<h2>Postres que enamoran</h2>
-
-<p>Dos personas degustando nuestros deliciosos postres</p>
-
+<h2>Dos personas degustando nuestros postres</h2>
 </div>
 
 </section>
 
-<!-- PRODUCTOS -->
-
 <section class="productos">
 
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
-
-<h3>Flan Casero</h3>
-
-<p>Huevos frescos, leche y caramelo natural</p>
-
+<h3>Flan</h3>
 <div class="precio">$1.50</div>
-
-<button onclick="agregar('Flan Casero',1.50)">Agregar</button>
-
+<button onclick="agregar('Flan',1.50)">Agregar</button>
 </div>
 
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187">
-
 <h3>Cheesecake</h3>
-
-<p>Queso crema con topping de fresa</p>
-
 <div class="precio">$2.75</div>
+<button onclick="agregar('Cheesecake',2.75)">Agregar</button>
+</div>
 
-<button onclick
+<div class="card">
+<img src="https://images.unsplash.com/photo-1625944525533-473f1c3d54e7">
+<h3>Tres Leches</h3>
+<div class="precio">$2.50</div>
+<button onclick="agregar('Tres Leches',2.50)">Agregar</button>
+</div>
+
+</section>
+
+<div class="carrito">
+
+<h3>🛒 Carrito</h3>
+
+<ul id="lista"></ul>
+
+<p>Subtotal: $<span id="subtotal">0</span></p>
+<p>Envío: $<span id="envio">1</span></p>
+<p>Total: $<span id="total">0</span></p>
+
+<button onclick="generarFactura()">Ver factura</button>
+<button onclick="enviarPedido()">Pedir por WhatsApp</button>
 ```
