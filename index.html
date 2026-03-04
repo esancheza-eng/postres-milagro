@@ -1,7 +1,8 @@
-```html id="sweetelhy_full_code"
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,30 +25,21 @@ text-align:center;
 padding:25px;
 }
 
-/* HERO VIDEO */
+header h1{
+margin:0;
+font-size:40px;
+}
+
+/* HERO */
 
 .hero{
-position:relative;
-height:400px;
-overflow:hidden;
-}
-
-.hero iframe{
-width:100%;
-height:100%;
-border:none;
-}
-
-.hero-text{
-position:absolute;
-top:40%;
-left:50%;
-transform:translate(-50%,-50%);
-color:white;
-background:rgba(0,0,0,0.5);
-padding:20px;
-border-radius:10px;
 text-align:center;
+padding:60px;
+background:#ffe3e3;
+}
+
+.hero h2{
+font-size:36px;
 }
 
 /* PRODUCTOS */
@@ -143,7 +135,7 @@ padding:20px;
 border-radius:10px;
 }
 
-/* ADMIN */
+/* PANEL */
 
 .admin{
 padding:40px;
@@ -169,44 +161,75 @@ padding:20px;
 <body>
 
 <header>
+
 <h1>🍰 Sweet Elhy</h1>
-<p>Postres caseros en Milagro</p>
+<p>Postres artesanales en Milagro</p>
+
 </header>
 
 <section class="hero">
 
-<iframe src="https://www.youtube.com/embed/4aZr5hZXP_s"></iframe>
+<h2>Postres Caseros Deliciosos</h2>
 
-<div class="hero-text">
-<h2>Dos personas degustando nuestros postres</h2>
-</div>
+<p>Elaborados por la Lcda. Mariuxi Hidalgo</p>
+
+<p>Más de 5 años de experiencia</p>
 
 </section>
 
 <section class="productos">
 
+<!-- FLAN -->
+
 <div class="card">
-<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
-<h3>Flan</h3>
+
+<img src="https://images.unsplash.com/photo-1604908177522-4021bdfb2b43">
+
+<h3>Flan Casero</h3>
+
+<p>Huevos frescos, leche y caramelo natural</p>
+
 <div class="precio">$1.50</div>
+
 <button onclick="agregar('Flan',1.50)">Agregar</button>
+
 </div>
 
+<!-- CHEESECAKE -->
+
 <div class="card">
-<img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187">
+
+<img src="https://images.unsplash.com/photo-1559622214-f8a9850965bb">
+
 <h3>Cheesecake</h3>
+
+<p>Queso crema con topping de fresa</p>
+
 <div class="precio">$2.75</div>
+
 <button onclick="agregar('Cheesecake',2.75)">Agregar</button>
+
 </div>
 
+<!-- TRES LECHES -->
+
 <div class="card">
-<img src="https://images.unsplash.com/photo-1625944525533-473f1c3d54e7">
+
+<img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729">
+
 <h3>Tres Leches</h3>
+
+<p>Bizcocho con leche evaporada y condensada</p>
+
 <div class="precio">$2.50</div>
+
 <button onclick="agregar('Tres Leches',2.50)">Agregar</button>
+
 </div>
 
 </section>
+
+<!-- CARRITO -->
 
 <div class="carrito">
 
@@ -218,6 +241,142 @@ padding:20px;
 <p>Envío: $<span id="envio">1</span></p>
 <p>Total: $<span id="total">0</span></p>
 
-<button onclick="generarFactura()">Ver factura</button>
+<button onclick="generarFactura()">Factura</button>
 <button onclick="enviarPedido()">Pedir por WhatsApp</button>
+
+</div>
+
+<!-- MAPA -->
+
+<section class="mapa">
+
+<h2>📍 Entregas en Milagro</h2>
+
+<iframe
+src="https://maps.google.com/maps?q=milagro%20ecuador&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="90%"
+height="350">
+</iframe>
+
+</section>
+
+<!-- RESEÑAS -->
+
+<section class="reseñas">
+
+<h2>⭐ Opiniones</h2>
+
+<div class="reseña">
+<p>“El tres leches es espectacular.”</p>
+</div>
+
+<div class="reseña">
+<p>“El cheesecake es increíble.”</p>
+</div>
+
+</section>
+
+<!-- PANEL -->
+
+<section class="admin">
+
+<h2>📊 Panel de pedidos</h2>
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Pedido</th>
+<th>Total</th>
+</tr>
+
+<tbody id="tablaPedidos"></tbody>
+
+</table>
+
+</section>
+
+<footer>
+
+<p>📍 Milagro - Ecuador</p>
+
+<p>📱 Pedidos al 0989938910</p>
+
+</footer>
+
+<a href="https://wa.me/593989938910" class="whatsapp-float">💬</a>
+
+<script>
+
+let carrito=[]
+let subtotal=0
+let envio=1
+
+function agregar(nombre,precio){
+
+carrito.push(nombre)
+
+subtotal+=precio
+
+document.getElementById("subtotal").innerText=subtotal.toFixed(2)
+
+document.getElementById("total").innerText=(subtotal+envio).toFixed(2)
+
+let lista=document.getElementById("lista")
+
+let item=document.createElement("li")
+
+item.textContent=nombre
+
+lista.appendChild(item)
+
+}
+
+function generarFactura(){
+
+let factura="Factura Sweet Elhy\n\n"
+
+carrito.forEach(p=>{
+factura+= "- "+p+"\n"
+})
+
+factura+="\nSubtotal: $"+subtotal.toFixed(2)
+factura+="\nEnvio: $"+envio
+factura+="\nTotal: $"+(subtotal+envio)
+
+alert(factura)
+
+}
+
+function enviarPedido(){
+
+let id=Date.now()
+
+let tabla=document.getElementById("tablaPedidos")
+
+let fila=document.createElement("tr")
+
+fila.innerHTML="<td>"+id+"</td><td>"+carrito.join(", ")+"</td><td>$"+(subtotal+envio)+"</td>"
+
+tabla.appendChild(fila)
+
+let mensaje="Pedido:%0A"
+
+carrito.forEach(p=>{
+mensaje+= "- "+p+"%0A"
+})
+
+mensaje+="Total: $"+(subtotal+envio)
+
+window.open("https://wa.me/593989938910?text="+mensaje)
+
+carrito=[]
+subtotal=0
+
+}
+
+</script>
+
+</body>
+</html>
 ```
